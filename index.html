@@ -1,4 +1,4 @@
-
+<style>
 body.dark-mode {
   background-color: #111;
   color: #eee;
@@ -49,7 +49,7 @@ body.light-mode {
     color: $light-color;
   }
 }
-
+</style>
 
 
 <body id="body" class="dark-mode">
@@ -61,7 +61,7 @@ body.light-mode {
 
 
 
-
+<script>
 function toggleDarkLight() {
   var body = document.getElementById("body");
   var currentClass = body.className;
@@ -88,3 +88,4 @@ function setThemeFromCookie() {
 (function() {
   setThemeFromCookie()
 })();
+</script>
