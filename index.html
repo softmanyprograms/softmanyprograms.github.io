@@ -1,5 +1,12 @@
-<style>
-body.dark-mode {
+---
+layout: default
+---
+<style id="inverter" media="none">
+  html { background-color: #eee; filter: invert(100%) }
+  * { background-color: inherit }
+  img:not([src*=".svg"]), [style*="url("] { filter: invert(100%) }
+  
+  body.dark-mode {
   background-color: #111;
   color: #eee;
 }
@@ -23,7 +30,26 @@ body.light-mode button {
   color: #eee;
 }
 </style>
+<div class="wrap">
+  <label class="button">
+    <input type="checkbox" id="themer">
+    Dark theme: <span aria-hidden="true"></span>
+  </label>
+  
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
 
 <body id="body" class="dark-mode">
   <h1>Dark/Light Mode Switcher</h1>
